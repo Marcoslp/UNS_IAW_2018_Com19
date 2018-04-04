@@ -1,8 +1,1 @@
-var pedido;
-var pizzas;
-
-$(function() {
-    $.get("json/jugadores.json", function(data, status) {
-       
-    });
-});
+var json = JSON.parse($.getJSON({'url':"json/jugadores.json",'async':false}).responseText);
