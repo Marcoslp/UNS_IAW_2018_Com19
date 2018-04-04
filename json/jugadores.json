@@ -1,0 +1,145 @@
+[
+    {
+        "id_jugador": 550,
+        "userName": "marcoslp",
+        "id_equipo": 1,
+        "personaje": "Mario",
+        "vehiculo": {
+                "kart": "Auto",
+                "ruedas": "Rojo flameante",
+                "glider": "Clasico"
+        }
+    } ,
+    
+    {
+        "id_jugador": 551,
+        "userName": "franiolo",
+        "id_equipo": 1,
+        "personaje": "Metal Mario",
+        "vehiculo": {
+                "kart": "Moto",
+                "ruedas": "Rojo diamante",
+                "glider": "Clasico"
+        }
+    } ,
+
+    {
+        "id_jugador": 552,
+        "userName": "ppncho",
+        "id_equipo": 2,
+        "personaje": "Luiggi",
+        "vehiculo": {
+                "kart": "Moto",
+                "ruedas": "Azul tracado",
+                "glider": "Clasico"
+        }
+    } , 
+    
+    {
+        "id_jugador": 553,
+        "userName": "razer45",
+        "id_equipo": 2,
+        "personaje": "Link",
+        "vehiculo": {
+                "kart": "Auto",
+                "ruedas": "Resistentes",
+                "glider": "Clasico"
+        }
+    } , 
+
+    {
+        "id_jugador": 554,
+        "userName": "razor15",
+        "id_equipo": 3,
+        "personaje": "Baby Mario",
+        "vehiculo": {
+                "kart": "Auto",
+                "ruedas": "Resistentes",
+                "glider": "Clasico"
+        }
+    } , 
+
+    {
+        "id_jugador": 555,
+        "userName": "dorbe",
+        "id_equipo": 3,
+        "personaje": "Baby Luiggi",
+        "vehiculo": {
+                "kart": "Auto",
+                "ruedas": "Amarillas resbalantes",
+                "glider": "Legendario"
+        }
+    } , 
+
+    {
+        "id_jugador": 556,
+        "userName": "anke56",
+        "id_equipo": 4,
+        "personaje": "Bowser",
+        "vehiculo": {
+                "kart": "Camioneta",
+                "ruedas": "Clasicas",
+                "glider": "Epico"
+        }
+    } , 
+
+    {
+        "id_jugador": 557,
+        "userName": "Tuki",
+        "id_equipo": 4,
+        "personaje": "Zelda",
+        "vehiculo": {
+                "kart": "Moto",
+                "ruedas": "Legendarias",
+                "glider": "Raro"
+        }
+    } , 
+
+    {
+        "id_jugador": 558,
+        "userName": "TFany",
+        "id_equipo": 5,
+        "personaje": "Princesa Rosalina",
+        "vehiculo": {
+                "kart": "Camioneta",
+                "ruedas": "Legendarias doradas",
+                "glider": "Arcoiris"
+        }
+    } , 
+
+    {
+        "id_jugador": 559,
+        "userName": "KT",
+        "id_equipo": 5,
+        "personaje": "Princesa Daisy",
+        "vehiculo": {
+                "kart": "Auto",
+                "ruedas": "Epicas",
+                "glider": "Dorado"
+        }
+    } , 
+
+    {
+        "id_jugador": 560,
+        "userName": "Sinforoso",
+        "id_equipo": 6,
+        "personaje": "Toad",
+        "vehiculo": {
+                "kart": "Moto",
+                "ruedas": "Peludas",
+                "glider": "Clasico"
+        }
+    } ,
+
+    {
+        "id_jugador": 561,
+        "userName": "izibarreix",
+        "id_equipo": 6,
+        "personaje": "Wario",
+        "vehiculo": {
+                "kart": "Auto",
+                "ruedas": "Vacunas",
+                "glider": "Campestre"
+        }
+    }
+]
