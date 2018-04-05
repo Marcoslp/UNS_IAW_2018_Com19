@@ -1,11 +1,4 @@
-
-main{
-    width: 100%;
-}
-
-
 .content-menu{
-    width: 120px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background: #e60012;
 }
@@ -13,9 +6,10 @@ main{
 .content-menu li{
     list-style: none;
     text-align: center;
-    padding: 10px;
+    padding: 13.5fpx;
     color: white;
     transition: all 300ms;
+ 
 }
 
 .content-menu li:hover{
@@ -71,10 +65,6 @@ body {
  
 }
 
-.contenedor {
-    display: flex;
-    width: 100%;
-}
 
 .tales {
     width: 100%;
@@ -82,13 +72,14 @@ body {
 
   .carousel-inner{
     width:100%;
-    max-height: 600px !important;
+    max-height: 800px !important;
+    
 }
 
 .img-responsive{
-      display:block;
-      height:600px;
-      width:100%;
+    display:block;
+    height:750px;
+    width:100%;
 }
 
 .navbar-brand,
@@ -129,5 +120,4 @@ body {
 .navbar-custom .nav-item:hover .nav-link {
     color: #ffffff;
 }
-
 

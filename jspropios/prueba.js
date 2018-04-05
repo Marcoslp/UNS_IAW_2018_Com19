@@ -1,1 +1,14 @@
-var json = JSON.parse($.getJSON({'url':"json/jugadores.json",'async':false}).responseText);
+$(function(){
+     var tabla = $('#tablaJugadores');
+     
+     $.getJSON('json/jugadores.json', function(data) {
+        $.each(data.jugadores,function(key,value){
+            tabla.append(
+                $(document.createElement('tr')).text(value.userName)
+            );
+        });
+    });
+
+});
+   
+
