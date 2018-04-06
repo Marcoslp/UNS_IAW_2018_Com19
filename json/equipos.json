@@ -1,0 +1,51 @@
+{ 
+    "equipos": [
+        { 
+            "id_equipo": 1,
+            "id_jugadorUno":550,
+            "id_jugadorDos":551,
+            "nombre":"Red Team",
+            "logo":"logorojo.png"
+        },
+
+        {
+            "id_equipo": 2,
+            "id_jugadorUno":552,
+            "id_jugadorDos":553,
+            "nombre":"Blue Team",
+            "logo":"logoazul.png"
+        },
+
+        { 
+            "id_equipo": 3,
+            "id_jugadorUno":554,
+            "id_jugadorDos":555,
+            "nombre":"Green Team",
+            "logo":"logoverde.png"
+        },
+
+        { 
+            "id_equipo": 4,
+            "id_jugadorUno":556,
+            "id_jugadorDos":557,
+            "nombre":"Yellow Team",
+            "logo":"logoamarillo.png"
+         },
+
+        { 
+            "id_equipo": 5,
+            "id_jugadorUno":558,
+            "id_jugadorDos":559,
+            "nombre":"Black Team",
+            "logo":"logonegro.png"
+        },
+
+        { 
+            "id_equipo": 6,
+            "id_jugadorUno":560,
+            "id_jugadorDos":561,
+            "nombre":"White Team",
+            "logo":"logoblanco.png"
+        }
+]
+}
