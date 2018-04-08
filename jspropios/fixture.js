@@ -9,6 +9,8 @@ $(function(){
 
 function armarFixture(carreras){
     $("#fixture").click(function(){
+        $("#equipos").removeClass('disabled'); 
+        $("#posiciones").removeClass('disabled'); 
         var fechaMapa = new Array(4,3);
         fechaMapa= [[0,0,0],[0,0,0],[0,0,0],[0,0,0]];
         var index=0;

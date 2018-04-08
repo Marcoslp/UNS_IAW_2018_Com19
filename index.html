@@ -11,8 +11,10 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
+   
     <!-- Estilos propios -->
     <link id="Estilos propios" href="csspropios/styles.css" rel="stylesheet">
+
   </head>
    <body>
 
@@ -40,12 +42,10 @@
                 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
-                </button>
-        
-                
-        
+                </button> 
         </nav>
-
+    
+       
   
 <!-- Carousel -->
  <div class="container-full" id = "carouselContainer">
@@ -88,9 +88,10 @@
     </div>
  </div>
 
+ <button onclick="topFunction()" id="scrollBtn" title="Go to top"><img src="img/logos/uparrow.svg" width="25px"></button>
 
-    <!--
-
+ 
+<!--
 <div id="contenedorFixture" class"container-full">
         <div class="row no-gutters">
                 <div class="col-sm-1">
@@ -100,91 +101,30 @@
 </div>
 -->
 
+<div id="gridTabla" class = "container-full">
+    <div class="row" id="tablaPosicion"></div>
+</div>
 
 <div  class="container" id="tablaPosicion"></div>
+<div  class="container" id="tablaCarrera"></div>
 
- <!--
-     <div id="tablasPosiciones" class="container"> 
-        <h2 font-family="Roboto"> <font color="black"> Posiciones generales del torneo</font></h2>
-        <table  class="table table-dark table-striped table-bordered table-md">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Equipo</th>
-                <th scope="col">Puntaje</th>
-                <th scope="col">Wins</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Equipo Rojo</td>
-                <td>47</td>
-                <td>7</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Equipo Azul</td>
-                <td>44</td>
-                <td>6</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Equipo Pepe</td>
-                <td>40</td>
-                <td>5</td>
-              </tr>
-            </tbody>
-        </table>
 
-        <br>
-        <br>
-        <br>
-     <!--   
-        <h2 font-family="Roboto"> <font color="black"> Posiciones última carrera</font></h2>
-        
-        <table class="table table-dark table-striped table-bordered table-md table-md">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Equipo</th>
-                <th scope="col">Puntaje ganado</th>
-      
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Equipo Rojo</td>
-                <td>+15</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Equipo Pepe</td>
-                <td>+12</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Equipo Azul</td>
-                <td>+9</td>
-              </tr>
-            </tbody>
-        </table>
-        <img id="mapaSiguiente" src="img/mapas/mapa1.png"> 
-    </div>
+
+
+
+
+
+
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
-    <script>
-  
-        </script>
-
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="jspropios/posiciones.js"></script>
     <script src="jspropios/fixture.js"></script>
+    <script src="jspropios/init.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </body>
+</body>
 </html>
