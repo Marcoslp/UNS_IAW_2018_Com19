@@ -1,4 +1,9 @@
 
+
+$(function(){
+    $("#tablaPosicion").hide();
+});
+
 $(function(){
     $.getJSON('json/fixture.json', function(fixture){
         $.getJSON('json/equipos.json',function(equipos){
@@ -8,7 +13,13 @@ $(function(){
  
 })
 
+$('#tablaPosicion').click(function(){
+    $('html, body').animate({
+        scrollTop: $("#carouselContainer").offset().top
+    }, 500);
+    $("#posiciones").removeClass('disabled'); 
 
+});
 
 function armarTablaPosiciones(dataCarreras, dataEquipos){
     $("#posiciones").click(function(){
@@ -48,6 +59,10 @@ function armarTablaPosiciones(dataCarreras, dataEquipos){
             var arr = [["Equipo", "Puntos", "Wins"]];
             arr = arr.concat(puntos);
             makeTable(contenedor,arr);
+            $("#tablaPosicion").show();
+            $('html, body').animate({
+                scrollTop: $("#tablaPosicion").offset().top
+                }, 500);
         } 
         else{
             return false;
@@ -56,7 +71,15 @@ function armarTablaPosiciones(dataCarreras, dataEquipos){
 }
 
 function makeTable(container, data) {
-        var table = $("<table/>").addClass('table table table-dark table-striped table-bordered table-md table-md');
+
+        var table = $("<table/>").addClass('table table table-dark table-striped table-bordered table-md tabla');
+        table.attr("id","tablaGeneral")
+        var subtitulo = $("<th></th>").attr("colspan", "3").text("TABLA DE POSICIONES GENERALES");
+
+        subtitulo.attr("id","headerTabla");
+      
+        table.append($("<tr></tr>").append(subtitulo));
+        
         $.each(data, function(rowIndex, r) {
             var row = $("<tr/>");
             $.each(r, function(colIndex, c) { 
@@ -64,5 +87,8 @@ function makeTable(container, data) {
             });
             table.append(row);
         });
+
+        
         return container.append(table);
 }
+

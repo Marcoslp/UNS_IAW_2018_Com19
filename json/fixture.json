@@ -4,6 +4,7 @@
             "id_carrera":1,
             "fecha": 1,
             "mapa": "Pista Arcoiris",
+            "fotoMapa": "pistaarcoiris.png",
             "vueltas":5,
             "posiciones": [
                     [
@@ -85,6 +86,7 @@
             "id_carrera":2,
             "fecha": 2,
             "mapa": "Estadio Mario Kart",
+            "fotoMapa": "estadiomariokart.png",
             "vueltas":3,
             "posiciones": [
                     [
@@ -166,6 +168,7 @@
             "id_carrera":3,
             "fecha": 3,
             "mapa": "Parque Acuático",
+            "fotoMapa": "parqueacuatico.png",
             "vueltas":3,
             "posiciones": [
                     [
@@ -246,6 +249,7 @@
             "id_carrera":4,
             "fecha": 4,
             "mapa": "Aeropuerto Soleado",
+            "fotoMapa": "aeropuertosoleado.png",
             "vueltas":7,
             "posiciones": [
                     [
