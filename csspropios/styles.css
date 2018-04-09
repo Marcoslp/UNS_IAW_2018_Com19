@@ -16,7 +16,7 @@
     color: white;
     transition: all 300ms;
     display: inline-block;
-    background: #e60012;
+   /* background: #e60012;*/
 }
 
 .content-menu li:hover{
@@ -58,6 +58,7 @@
 
 background-color: #e60012; 
 border-radius: 10px;
+text-align: center;
 }
 
 
@@ -118,13 +119,13 @@ border-radius: 10px;
     top: 700px;
 }
 
-
+img {
+    image-rendering: -webkit-optimize-contrast;
+}
 
 
 body {
-    
-    background-image: url(../img/background.jpg);
-    /* Background image is centered vertically and horizontally at all times */
+      /* Background image is centered vertically and horizontally at all times */
     background-position: center center;
     
     /* Background image doesn't tile */
@@ -143,8 +144,7 @@ body {
     
     padding-left: 0;
     padding-right: 0;
-
-    padding-top: 70px;
+    padding-top: 80px;
  
 }
 
@@ -338,4 +338,3 @@ tbody:hover tr:hover td {
     color: #444;
     text-shadow: 0 1px 0 #fff;
 }
-

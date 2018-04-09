@@ -24,11 +24,10 @@ function armarTablaPosicionesGenerales(dataCarreras, dataEquipos, dataJugadores)
             $("#equipos").removeClass('disabled'); 
             $("#fixture").removeClass('disabled'); 
 
-            $("#contenedorEquipo").remove();
+            $("#contenedorEquipos").remove();
             $("#contenedorFixture").remove();
 
             $("#gridTabla").append($("<div/>").addClass("row").attr("id","tablaPosicion"));
-            $this.addClass('disabled'); //acordarse cuando haga otro boton recorrer para desactivar el disabled
             var puntos = new Array(6,3);
             puntos = [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0]];
             var index=0;
@@ -75,8 +74,7 @@ function armarTablaPosicionesGenerales(dataCarreras, dataEquipos, dataJugadores)
                 scrollTop: $("#cabeza").offset().top
                 }, 500);
             $this.removeClass('disabled');
-    //        return false;
-        }
+       }
     })
 }
 

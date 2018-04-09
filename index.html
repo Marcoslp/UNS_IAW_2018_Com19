@@ -14,7 +14,7 @@
    
     <!-- Estilos propios -->
     <link id="Estilos propios" href="csspropios/styles.css" rel="stylesheet">
-
+    <link id="toggleBotonStyle" href="csspropios/toggleButton.css" rel="stylesheet">
   </head>
    <body>
 
@@ -22,23 +22,33 @@
                 <div class="navbar-header">
                     <a class="header-brand" href="#"><img id="nintendoLogo" src="img/logos/nintendo.png"  alt="Nintendo Logo"></a>
                 </div>
+
                 <div class="navbar-header">
-                        </div>
+                    <a class="header-brand" href="#"><img id="nintendoswitch" src="img/logos/nintendoswitch.png" width="60px" alt="Nintendo Switch"></a>
+                </div>
                 
                 <div class="content-menu">
                     <li id="equipos"><span><img width="30px" src="img/logos/super-mario.svg"></img></span><h5>Equipos</h5></li>
                     <li id="posiciones"><span><img width="30px" src="img/logos/trophy.svg"></span><h5>Posiciones</h5></li>
                     <li id="fixture"><span><img width="30px" src="img/logos/racing.svg"></span><h5>Fixture</h5></li>
+                   
                 </div>
-        
-                <ul class="nav nav-pills ml-auto">
+                
+               
+               
+                <ul class="nav nav-pills ml-auto">      
                     <li class="nav-item">
-                        <a class="header-brand" href="#"><img id="nintendo" src="img/logos/nintendoswitch.svg" width="50px"  alt="Nintendo Switch"></a>
+                    <label class="switch" >
+                        <input id="toggleB" type="checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Login</a>
+                        <button type="button" class="btn btn-primary" id="loginButton">Login</button>
                     </li>
                 </ul>
+
+               
                 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -103,15 +113,9 @@
     <div class="row" id="tablaPosicion"></div>
 </div>
 
-<!--
-<div  class="container" id="tablaPosicion"></div>
-<div  class="container" id="tablaCarrera"></div>
-
--->
-
-
-
-
+<div id="gridEquipos" class = "container-full">
+        <div class="row" id="contenedorEquipos"></div>
+</div>
 
 
 
@@ -125,6 +129,8 @@
     <script src="jspropios/fixture.js"></script>
     <script src="jspropios/init.js"></script>
     <script src="jspropios/cargacomponentes.js"></script>
+    <script src="jspropios/cambioTema.js"></script>
+    <script src="jspropios/listarEquipos.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>

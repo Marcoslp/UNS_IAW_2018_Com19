@@ -1,3 +1,4 @@
+
 $(function(){
     $.getJSON('json/fixture.json', function(fixture){
         $.getJSON('json/equipos.json',function(equipos){
@@ -14,7 +15,9 @@ function armarFixture(carreras){
             $("#fixture").addClass('disabled');
             $("#equipos").removeClass('disabled'); 
             $("#posiciones").removeClass('disabled'); 
+         
             $("#tablaPosicion").remove();
+            $("#contendorEquipos").remove();
 
             $("#gridFixture").append($("<div/>").addClass("row").attr("id","contenedorFixture"));
         
@@ -33,7 +36,7 @@ function armarFixture(carreras){
 
             var contenedor = $("#contenedorFixture");
             $('html, body').animate({
-                scrollTop: $("#contenedorFixture").offset().top
+                scrollTop: contenedor.offset().top
                 }, 500);
             makeFixturePanel(contenedor, fechaMapa);
         }
@@ -50,9 +53,9 @@ function armarFixture(carreras){
 function makeFixturePanel(container, data){
 
     var img,span,li,src,h4;
-   container = container.append($("<div></div>").addClass('col-sm-1').append($("<li></li>")).append($("<h4>FIXTURE</h4>")));
+   container = container.append($("<div></div>").addClass('col-sm-3').append($("<li></li>")).append($("<h4>FIXTURE</h4>")));
 
-   container = container.append($("<div></div>").addClass('col-sm-11'));
+   container = container.append($("<div></div>").addClass('col-sm-9'));
 
     for(var i =0; i < data.length; i++){      
         span = $("<span/>");
