@@ -18,7 +18,7 @@
   </head>
    <body>
 
-        <nav class="navbar navbar-expand-lg navbar-custom fixed-top" id="nv">
+        <nav class="navbar navbar-expand-lg navbar-custom fixed-top navbar-dark">
                 <div class="navbar-header">
                     <a class="header-brand" href="#"><img id="nintendoLogo" src="img/logos/nintendo.png"  alt="Nintendo Logo"></a>
                 </div>
@@ -27,35 +27,34 @@
                     <a class="header-brand" href="#"><img id="nintendoswitch" src="img/logos/nintendoswitch.png" width="60px" alt="Nintendo Switch"></a>
                 </div>
                 
-                <div class="content-menu">
-                    <li id="equipos"><span><img width="30px" src="img/logos/super-mario.svg"></img></span><h5>Equipos</h5></li>
-                    <li id="posiciones"><span><img width="30px" src="img/logos/trophy.svg"></span><h5>Posiciones</h5></li>
-                    <li id="fixture"><span><img width="30px" src="img/logos/racing.svg"></span><h5>Fixture</h5></li>
-                   
-                </div>
-                
-               
-               
-                <ul class="nav nav-pills ml-auto">      
-                    <li class="nav-item">
-                    <label class="switch" >
-                        <input id="toggleB" type="checkbox" checked>
-                        <span class="slider round"></span>
-                    </label>
-                    </li>
-                    <li class="nav-item">
-                        <button type="button" class="btn btn-primary" id="loginButton">Login</button>
-                    </li>
-                </ul>
-
-               
-                
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler btn-dark" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
-                </button> 
+                </button>   
+
+                <div class="collapse navbar-collapse" id="navbarToggler">
+                
+                
+                    <div class="content-menu">
+                        <li id="equipos"><span><img width="30px" src="img/logos/super-mario.svg"></img></span><h5>Equipos</h5></li>
+                        <li id="posiciones"><span><img width="30px" src="img/logos/trophy.svg"></span><h5>Posiciones</h5></li>
+                        <li id="fixture"><span><img width="30px" src="img/logos/racing.svg"></span><h5>Fixture</h5></li>
+                    
+                    </div>
+                
+                    <ul class="nav nav-pills ml-auto">      
+                        <li class="nav-item">
+                        <label class="switch" >
+                            <input id="toggleB" type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" class="btn btn-primary" id="loginButton">Login</button>
+                        </li>
+                    </ul>
+            </div>            
         </nav>
     
-       
   
 <!-- Carousel -->
  <div class="container-full" id = "carouselContainer">
@@ -131,6 +130,7 @@
     <script src="jspropios/cargacomponentes.js"></script>
     <script src="jspropios/cambioTema.js"></script>
     <script src="jspropios/listarEquipos.js"></script>
+    <script src="jspropios/storage.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>

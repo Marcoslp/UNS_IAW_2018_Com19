@@ -1,27 +1,34 @@
-var i=0;
+var estilo;
 
 $(function(){
-    $('body').css("background", 'url("img/background.jpg")');
+    if (recuperarEstilo() != undefined)
+        estilo = setEstilo(recuperarEstilo());
+    else 
+        estilo = setEstilo(1);  
+
     $("#toggleB").click(function() {
-        if(i==0){    
-        $('body').css("background", 'url("img/backgroundblack.jpg")');
-        $(".navbar-custom").css( "background-color","#0a0a0a");
-        $(".content-menu").css( "background","#0a0a0a");
-     //   $("#loginButton").removeClass("btn btn-primary").addClass("btn btn-danger");
-        $("#loginButton").css("background-color","#e60012");
-        $("#loginButton").css("border-color","#e60012");
-        i=1;
-        }
-        else{
-            $('body').css("background", 'url("img/background.jpg")');
-            $(".navbar-custom").css("background-color","#e60012");
-            $(".content-menu").css("background","#e60012");
-            $("#loginButton").removeClass("btn btn-danger").addClass("btn btn-primary");
-            $("#loginButton").css({ 'background-color' : '', 'border-color' : '' });
-            i=0;
-        }
-      
-        
+       guardarEstilo(estilo);
+       estilo = setEstilo(estilo);
     });
 
 })
+
+function setEstilo(estilo){
+    if(estilo==0){    //estilo dark
+        $('body').css("background", 'url("img/backgroundblack.jpg")');
+        $(".navbar-custom").css( "background-color","#0a0a0a");
+        $(".content-menu").css( "background","#0a0a0a");
+        $("#loginButton").css("background-color","#e60012");
+        $("#loginButton").css("border-color","#e60012");
+        estilo = 1;
+    }
+    else{ //estilo rojo
+        $('body').css("background", 'url("img/background.jpg")');
+        $(".navbar-custom").css("background-color","#e60012");
+        $(".content-menu").css("background","#e60012");
+        $("#loginButton").removeClass("btn btn-danger").addClass("btn btn-primary");
+        $("#loginButton").css({ 'background-color' : '', 'border-color' : '' });
+        estilo=0;
+    }
+    return estilo;
+}

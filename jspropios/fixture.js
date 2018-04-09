@@ -61,7 +61,7 @@ function makeFixturePanel(container, data){
         span = $("<span/>");
         li = $("<li/>");
         img = $("<img/>");
-        h4 = $("<h4/>")
+        h4 = $("<h5/>")
 
         
       
@@ -74,7 +74,7 @@ function makeFixturePanel(container, data){
 
 
         img.attr("src",src);
-        img.attr("width","270px");
+        img.attr("width","250px");
        
         span.append(h4);
         span.append(img);

@@ -62,13 +62,12 @@ function hacerTabla(container,dataEquipos){
         var jugadorDos=(obtenerJugador(jugadores,equipo.id_jugadorDos));
         
         var texto=$("<strong/>").append(equipo.nombre);
+
+                
+        lista.append($("<li/>").addClass("list-group-item list-group-item-action list-group-item-light").text(equipo.nombre));
+        lista.append($("<li/>").addClass("list-group-item list-group-item-action list-group-item-light").text(jugadorUno));
+        lista.append($("<li/>").addClass("list-group-item list-group-item-action list-group-item-light").text(jugadorDos));
         
-        lista.append($("<li/>").addClass("list-group-item list-group-item-action list-group-item-danger").text(equipo.nombre));
-        lista.append($("<li/>").addClass("list-group-item list-group-item-action list-group-item-danger").text(jugadorUno));
-        lista.append($("<li/>").addClass("list-group-item list-group-item-action list-group-item-danger").text(jugadorDos));
-
-
-
     if(i<3){    
         row.append($("<td/>").append(imagen).append(lista));
         table.append(row);
@@ -103,4 +102,24 @@ function hacerTabla(container,dataEquipos){
         return devolver;
     }
 
+    /* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
     
