@@ -9,36 +9,58 @@ $(function(){
 
 function armarFixture(carreras){
     $("#fixture").click(function(){
-        $("#equipos").removeClass('disabled'); 
-        $("#posiciones").removeClass('disabled'); 
-        var fechaMapa = new Array(4,3);
-        fechaMapa= [[0,0,0],[0,0,0],[0,0,0],[0,0,0]];
-        var index=0;
-        var cantPosiciones = 12;
+        var $this = $(this); //cache the reference
+        if (!$this.hasClass('disabled')) {
+            $("#fixture").addClass('disabled');
+            $("#equipos").removeClass('disabled'); 
+            $("#posiciones").removeClass('disabled'); 
+            $("#tablaPosicion").remove();
+
+            $("#gridFixture").append($("<div/>").addClass("row").attr("id","contenedorFixture"));
+        
+            var fechaMapa = new Array(4,3);
+            fechaMapa= [[0,0,0],[0,0,0],[0,0,0],[0,0,0]];
+            var index=0;
+            var cantPosiciones = 12;
 
 
-        $.each(carreras.fixture,function(key,carrera){
-            fechaMapa[index][0] = carrera.fecha;
-            fechaMapa[index][1] = carrera.mapa;
-            fechaMapa[index][2] = carrera.fotoMapa;
-            index++;
-        })
+            $.each(carreras.fixture,function(key,carrera){
+                fechaMapa[index][0] = carrera.fecha;
+                fechaMapa[index][1] = carrera.mapa;
+                fechaMapa[index][2] = carrera.fotoMapa;
+                index++;
+            })
 
-        var contenedor = $("#contenedorFixture");
-        makeFixturePanel(contenedor, fechaMapa);
+            var contenedor = $("#contenedorFixture");
+            $('html, body').animate({
+                scrollTop: $("#contenedorFixture").offset().top
+                }, 500);
+            makeFixturePanel(contenedor, fechaMapa);
+        }
+        else{
+            $("#contenedorFixture").remove();
+            $('html, body').animate({
+                scrollTop: $("#cabeza").offset().top
+                }, 500);
+            $this.removeClass('disabled');
+        }
     })
 }
 
 function makeFixturePanel(container, data){
 
     var img,span,li,src,h4;
+   container = container.append($("<div></div>").addClass('col-sm-1').append($("<li></li>")).append($("<h4>FIXTURE</h4>")));
 
+   container = container.append($("<div></div>").addClass('col-sm-11'));
 
     for(var i =0; i < data.length; i++){      
         span = $("<span/>");
         li = $("<li/>");
         img = $("<img/>");
         h4 = $("<h4/>")
+
+        
       
         src = ("img/mapas/").concat(data[i][2]);  
 
@@ -49,7 +71,7 @@ function makeFixturePanel(container, data){
 
 
         img.attr("src",src);
-        img.attr("width","300px");
+        img.attr("width","270px");
        
         span.append(h4);
         span.append(img);
@@ -58,3 +80,4 @@ function makeFixturePanel(container, data){
         container.append(li);
     }
 }
+

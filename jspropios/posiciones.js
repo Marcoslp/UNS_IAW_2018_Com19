@@ -20,12 +20,20 @@ function armarTablaPosicionesGenerales(dataCarreras, dataEquipos, dataJugadores)
     $("#posiciones").click(function(){
         var $this = $(this); //cache the reference
         if (!$this.hasClass('disabled')) {
+            $("#posiciones").addClass('disabled');
+            $("#equipos").removeClass('disabled'); 
+            $("#fixture").removeClass('disabled'); 
+
+            $("#contenedorEquipo").remove();
+            $("#contenedorFixture").remove();
+
+            $("#gridTabla").append($("<div/>").addClass("row").attr("id","tablaPosicion"));
             $this.addClass('disabled'); //acordarse cuando haga otro boton recorrer para desactivar el disabled
             var puntos = new Array(6,3);
             puntos = [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0]];
             var index=0;
             var cantPosiciones = 12;
-    
+    /* Este es el código menos reusable que hice en mi vida :) */
             $.each(dataCarreras.fixture,function(key,carrera){
                 $.each(dataEquipos.equipos,function(key,equipo){
                     for(var i = 0; i < cantPosiciones;i++){
@@ -60,10 +68,14 @@ function armarTablaPosicionesGenerales(dataCarreras, dataEquipos, dataJugadores)
             $('html, body').animate({
                 scrollTop: $("#tablaPosicion").offset().top
                 }, 500);
-
         } 
         else{
-            return false;
+            $("#tablaPosicion").remove();
+            $('html, body').animate({
+                scrollTop: $("#cabeza").offset().top
+                }, 500);
+            $this.removeClass('disabled');
+    //        return false;
         }
     })
 }
