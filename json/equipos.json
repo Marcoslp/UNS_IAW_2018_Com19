@@ -5,7 +5,7 @@
             "id_jugadorUno":550,
             "id_jugadorDos":551,
             "nombre":"Red Team",
-            "logo":"redteam.jpg"
+            "logo":"redteam.png"
         },
 
         {
@@ -13,7 +13,7 @@
             "id_jugadorUno":552,
             "id_jugadorDos":553,
             "nombre":"Blue Team",
-            "logo":"blueteam.svg"
+            "logo":"blueteam.png"
         },
 
         { 
@@ -21,7 +21,7 @@
             "id_jugadorUno":554,
             "id_jugadorDos":555,
             "nombre":"Green Team",
-            "logo":"greenteam.jpg"
+            "logo":"greenteam.png"
         },
 
         { 
@@ -29,7 +29,7 @@
             "id_jugadorUno":556,
             "id_jugadorDos":557,
             "nombre":"Yellow Team",
-            "logo":"yellowteam.jpg"
+            "logo":"yellowteam.png"
          },
 
         { 
@@ -37,7 +37,7 @@
             "id_jugadorUno":558,
             "id_jugadorDos":559,
             "nombre":"Black Team",
-            "logo":"blackteam.jpg"
+            "logo":"blackteam.png"
         },
 
         { 
