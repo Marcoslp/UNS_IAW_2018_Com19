@@ -1,7 +1,5 @@
-var abrirEquipos=false;
-
-
-$(document).ready(function(){
+$(function(){
+    $("#descripcionEquipo").hide();
     $('#equipos').click(function(){
         var $this = $(this); //cache the reference
         if (!$this.hasClass('disabled')) {
@@ -9,32 +7,25 @@ $(document).ready(function(){
             $("#fixture").removeClass('disabled');
             $("#posiciones").removeClass('disabled'); 
             
+            $("#contenedorFixture").remove();
             $("#tablaPosicion").remove();
-            $("#contendorFixture").remove();
+            $("#descripcionEquipo").remove();
 
             $("#gridEquipos").append($("<div/>").addClass("row").attr("id","contenedorEquipos"));
-        
+            
+            $("body").append($("<div/>").addClass("jumbotron jumbotron-fluid container-full").attr("id","descripcionEquipo"));
+            $("#descripcionEquipo").hide();
+   
             var contenedor=$("#contenedorEquipos");
 
 
             $.getJSON('json/equipos.json', function(equipos){
                 hacerTabla(contenedor,equipos);
             });
-            $("#contenedorEquipos").show();
+
             $('html, body').animate({
-                scrollTop: $("#contenedorEquipos").offset().top
+                scrollTop: $("#gridEquipos").offset().top
                 }, 500);
-          
-            $("body").on("click",".participante",function(e) {
-                var selectedLiText = $(this).text();
-                selectedLiText=selectedLiText.substring(11);
-                $.getJSON('json/jugadores.json', function(jugadores){
-                    var pantallaJ= getPantallaJugador(selectedLiText,jugadores);
-                    $("#descripcionEquipo").append(pantallaJ);
-                    $("#tablaEquipos").hide();
-                    $("#descripcionEquipo").show();
-                }); 
-            }); 
         }
         else{
             $("#contenedorEquipos").remove();
@@ -44,10 +35,20 @@ $(document).ready(function(){
             $this.removeClass('disabled');
         }
 
-    });
-    
-    
-    });
+    });    
+});
+$(function(){ 
+    $("body").on("click",".participante",function(e) {
+        var selectedLiText = $(this).text();
+        selectedLiText=selectedLiText.substring(11);
+        $.getJSON('json/jugadores.json', function(jugadores){
+            var pantallaJ= getPantallaJugador(selectedLiText,jugadores);
+            $("#descripcionEquipo").append(pantallaJ);
+            $("#tablaEquipos").remove();
+            $("#descripcionEquipo").show();
+        }); 
+    }); 
+});
 
 
 function hacerTabla(container,dataEquipos){
@@ -134,11 +135,7 @@ function getPantallaJugador(nombrejugador,jugadores){
      vehiculoLista=vehiculoLista.add($("<dd/>").text("- Glider: "+player.vehiculo.glider));
      
      devolver=devolver.add(vehiculoLista);
-     
-    
-
-
-
+     $("#descripcionEquipo").show();
      return devolver;
 
  }

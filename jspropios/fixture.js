@@ -17,7 +17,9 @@ function armarFixture(carreras){
             $("#posiciones").removeClass('disabled'); 
          
             $("#tablaPosicion").remove();
-            $("#contendorEquipos").remove();
+            $("#contenedorEquipos").remove();
+            $("#descripcionEquipo").remove();
+
 
             $("#gridFixture").append($("<div/>").addClass("row").attr("id","contenedorFixture"));
         
@@ -36,7 +38,7 @@ function armarFixture(carreras){
 
             var contenedor = $("#contenedorFixture");
             $('html, body').animate({
-                scrollTop: contenedor.offset().top
+                scrollTop: $("#gridFixture").offset().top
                 }, 500);
             makeFixtureCards(contenedor, fechaMapa);
         }

@@ -26,6 +26,8 @@ function armarTablaPosicionesGenerales(dataCarreras, dataEquipos, dataJugadores)
 
             $("#contenedorEquipos").remove();
             $("#contenedorFixture").remove();
+            $("#descripcionEquipo").remove();
+
 
             $("#gridTabla").append($("<div/>").addClass("row").attr("id","tablaPosicion"));
             var puntos = new Array(6,3);
