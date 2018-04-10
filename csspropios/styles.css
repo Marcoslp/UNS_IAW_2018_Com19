@@ -394,3 +394,9 @@ tbody:hover tr:hover td {
     color: rgb(0, 0, 0);
     text-align: center;
   }
+
+#descripcionEquipo {
+
+    height: 700px;
+
+}

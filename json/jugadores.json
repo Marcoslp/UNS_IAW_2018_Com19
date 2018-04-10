@@ -5,6 +5,7 @@
             "userName": "marcoslp",
             "id_equipo": 1,
             "personaje": "Mario",
+            "avatar": "duende.jpg",
             "vehiculo": {
                     "kart": "Auto",
                     "ruedas": "Rojo flameante",
@@ -17,6 +18,7 @@
             "userName": "franiolo",
             "id_equipo": 1,
             "personaje": "Metal Mario",
+            "avatar": "duende.jpg",
             "vehiculo": {
                     "kart": "Moto",
                     "ruedas": "Rojo diamante",
@@ -29,6 +31,7 @@
             "userName": "ppncho",
             "id_equipo": 2,
             "personaje": "Luiggi",
+            "avatar": "duende.jpg",
             "vehiculo": {
                     "kart": "Moto",
                     "ruedas": "Azul tracado",
@@ -41,6 +44,7 @@
             "userName": "razer45",
             "id_equipo": 2,
             "personaje": "Link",
+            "avatar": "duende.jpg",
             "vehiculo": {
                     "kart": "Auto",
                     "ruedas": "Resistentes",
@@ -53,6 +57,7 @@
             "userName": "razor15",
             "id_equipo": 3,
             "personaje": "Baby Mario",
+            "avatar": "duende.jpg",
             "vehiculo": {
                     "kart": "Auto",
                     "ruedas": "Resistentes",
@@ -65,6 +70,7 @@
             "userName": "dorbe",
             "id_equipo": 3,
             "personaje": "Baby Luiggi",
+            "avatar": "duende.jpg",
             "vehiculo": {
                     "kart": "Auto",
                     "ruedas": "Amarillas resbalantes",
@@ -77,6 +83,7 @@
             "userName": "anke56",
             "id_equipo": 4,
             "personaje": "Bowser",
+            "avatar": "duende.jpg",
             "vehiculo": {
                     "kart": "Camioneta",
                     "ruedas": "Clasicas",
@@ -89,6 +96,7 @@
             "userName": "Tuki",
             "id_equipo": 4,
             "personaje": "Zelda",
+            "avatar": "duende.jpg",
             "vehiculo": {
                     "kart": "Moto",
                     "ruedas": "Legendarias",
@@ -101,6 +109,7 @@
             "userName": "TFany",
             "id_equipo": 5,
             "personaje": "Princesa Rosalina",
+            "avatar": "duende.jpg",
             "vehiculo": {
                     "kart": "Camioneta",
                     "ruedas": "Legendarias doradas",
@@ -113,6 +122,7 @@
             "userName": "KT",
             "id_equipo": 5,
             "personaje": "Princesa Daisy",
+            "avatar": "duende.jpg",
             "vehiculo": {
                     "kart": "Auto",
                     "ruedas": "Epicas",
@@ -125,6 +135,7 @@
             "userName": "Sinforoso",
             "id_equipo": 6,
             "personaje": "Toad",
+            "avatar": "duende.jpg",
             "vehiculo": {
                     "kart": "Moto",
                     "ruedas": "Peludas",
@@ -137,6 +148,7 @@
             "userName": "izibarreix",
             "id_equipo": 6,
             "personaje": "Wario",
+            "avatar": "duende.jpg",
             "vehiculo": {
                     "kart": "Auto",
                     "ruedas": "Vacunas",

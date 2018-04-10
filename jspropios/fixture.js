@@ -90,7 +90,7 @@ function makeFixtureCards(container, data){
     for(var i =0; i < data.length; i++){  
 
         //Armo la imagen del mapa
-        card = $("<div></div>").addClass("card bg-dark col-sm-3");
+        card = $("<div></div>").addClass("card bg-light col-sm-3");
         card.css("width","400px");
        
 
