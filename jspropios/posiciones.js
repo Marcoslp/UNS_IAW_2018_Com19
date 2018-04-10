@@ -137,7 +137,7 @@ function makeTable(container, data) {
 
         container = container.append($("<div></div>").addClass('col-sm-1'));
 
-        var table = $("<table/>").addClass('table table table-dark table-striped table-bordered table-md tabla');
+        var table = $("<table/>").addClass('table table table-dark table-striped table-bordered table-md ');
         table.attr("id","tablaGeneral")
         var subtitulo = $("<th></th>").attr("colspan", "3").text("TABLA DE POSICIONES GENERALES");
 
@@ -154,5 +154,7 @@ function makeTable(container, data) {
         });
         return container.append(table);
 }
+
+
 
 
