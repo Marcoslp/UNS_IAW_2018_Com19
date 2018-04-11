@@ -43,7 +43,7 @@ $(function(){
         selectedLiText=selectedLiText.substring(11);
         $.getJSON('json/jugadores.json', function(jugadores){
             var pantallaJ= getPantallaJugador(selectedLiText,jugadores);
-            $("#descripcionEquipo").append(pantallaJ);
+         //   $("#descripcionEquipo").append(pantallaJ);
             $("#tablaEquipos").remove();
             $("#descripcionEquipo").show();
         }); 
@@ -118,16 +118,55 @@ function getPantallaJugador(nombrejugador,jugadores){
          }
      });
 
+     var gridUser = $("#descripcionEquipo");
+     var gridPersonaje = $("<div></div>").addClass("container-full");
+     gridPersonaje.css("float","left");
+     var user=$("<p/>").addClass("jugador-name").text(nombrejugador).append($("<br/>"));
+     var pj = $("<p/>").addClass("texto-jugador").text("Personaje Favorito: ").append($("<br/>"));;
+     var playerPicture = $("<img/>").attr({src:"img/personajes/"+player.fotopersonaje,width:"auto",height:"150px"});
+     var textoPlayer = $("<p/>").addClass("texto-jugador").text(player.personaje);
 
-     var source="img/logos/duende.jpg";
-     var avatar=$("<img/>").attr({src:source,width:"100px",height:"100px"});
-     var texto=$("<h1/>").addClass("display-4").text(nombrejugador);
-      
+     var source="img/avatar/"+player.avatar;
+     var avatar=$("<img/>").attr({src:source,width:"150px",height:"150px"});
+    
+     gridUser.append(avatar);
+     avatar.append(user);
+     gridUser.append(user);
+   
+    gridUser.append(gridPersonaje);
+
+     gridPersonaje.append(pj);
+     pj.append(playerPicture);
+     gridPersonaje.append(textoPlayer);
+
+
+    var gridVehiculo = $("<div></div>").addClass("container-full");
+    gridVehiculo.css("display","inline-block");
+
+    var vehiculoLista=$("<dl/>");
+
+     vehiculoLista.addClass("texto-vehiculo");
+     
+     vehiculoLista=vehiculoLista.add($("<dt/>").text("Vehiculo Favorito:"));
+     vehiculoLista=vehiculoLista.add($("<dd/>").text("- Kart: "+player.vehiculo.kart));
+     vehiculoLista=vehiculoLista.add($("<dd/>").text("- Ruedas: "+player.vehiculo.ruedas));
+     vehiculoLista=vehiculoLista.add($("<dd/>").text("- Glider: "+player.vehiculo.glider));
+    
+     gridVehiculo.append(vehiculoLista);
+
+     gridUser.append(gridVehiculo);
+    
+    // return jumbo.append(grid);
+     /*
      var devolver=avatar.add(texto);
      
-     devolver=devolver.add($("<p/>").add($("<strong/>").text("Personaje Favorito: "+player.personaje)));
-     
+    // devolver=devolver.add($("<p/>").add($("<strong/>").text("Personaje Favorito: "+player.personaje)));
+     devolver.append(playerPicture);
+
+
      var vehiculoLista=$("<dl/>");
+
+     vehiculoLista.addClass("texto-jugador");
      
      vehiculoLista=vehiculoLista.add($("<dt/>").text("Vehiculo Favorito:"));
      vehiculoLista=vehiculoLista.add($("<dd/>").text("- Kart: "+player.vehiculo.kart));
@@ -135,7 +174,9 @@ function getPantallaJugador(nombrejugador,jugadores){
      vehiculoLista=vehiculoLista.add($("<dd/>").text("- Glider: "+player.vehiculo.glider));
      
      devolver=devolver.add(vehiculoLista);
+    
      $("#descripcionEquipo").show();
      return devolver;
+     */
 
  }

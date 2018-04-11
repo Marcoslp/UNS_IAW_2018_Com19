@@ -396,7 +396,31 @@ tbody:hover tr:hover td {
   }
 
 #descripcionEquipo {
-
     height: 700px;
     text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+    float: center;
+    background-image: url(../img/back.jpg);
 }
+
+.jugador-name {
+    font-size: 60px;
+    font-family: 'Poppins', sans-serif;
+   
+}
+
+.texto-jugador {
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+    float:center;
+}
+
+.gridV{
+    display: inline-block;
+}
+
+
+

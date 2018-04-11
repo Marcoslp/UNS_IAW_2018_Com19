@@ -5,7 +5,8 @@
             "userName": "marcoslp",
             "id_equipo": 1,
             "personaje": "Mario",
-            "avatar": "duende.jpg",
+            "fotopersonaje":"mario.png",
+            "avatar": "myAvatarmarcoslp.svg",
             "vehiculo": {
                     "kart": "Auto",
                     "ruedas": "Rojo flameante",
@@ -18,7 +19,8 @@
             "userName": "franiolo",
             "id_equipo": 1,
             "personaje": "Metal Mario",
-            "avatar": "duende.jpg",
+            "fotopersonaje":"metal-mario.png",
+            "avatar": "myAvatarfraniolo.svg",
             "vehiculo": {
                     "kart": "Moto",
                     "ruedas": "Rojo diamante",
@@ -31,7 +33,8 @@
             "userName": "ppncho",
             "id_equipo": 2,
             "personaje": "Luiggi",
-            "avatar": "duende.jpg",
+            "fotopersonaje":"luiggi.png",
+            "avatar": "myAvatarppncho.svg",
             "vehiculo": {
                     "kart": "Moto",
                     "ruedas": "Azul tracado",
@@ -44,7 +47,8 @@
             "userName": "razer45",
             "id_equipo": 2,
             "personaje": "Link",
-            "avatar": "duende.jpg",
+            "fotopersonaje":"link.png",
+            "avatar": "myAvatarrazer45.svg",
             "vehiculo": {
                     "kart": "Auto",
                     "ruedas": "Resistentes",
@@ -57,7 +61,8 @@
             "userName": "razor15",
             "id_equipo": 3,
             "personaje": "Baby Mario",
-            "avatar": "duende.jpg",
+            "fotopersonaje":"baby-mario.png",
+            "avatar": "myAvatarrazor15.svg",
             "vehiculo": {
                     "kart": "Auto",
                     "ruedas": "Resistentes",
@@ -70,7 +75,8 @@
             "userName": "dorbe",
             "id_equipo": 3,
             "personaje": "Baby Luiggi",
-            "avatar": "duende.jpg",
+            "fotopersonaje":"baby-luiggi.png",
+            "avatar": "myAvatardorbe.svg",
             "vehiculo": {
                     "kart": "Auto",
                     "ruedas": "Amarillas resbalantes",
@@ -83,7 +89,8 @@
             "userName": "anke56",
             "id_equipo": 4,
             "personaje": "Bowser",
-            "avatar": "duende.jpg",
+            "fotopersonaje":"bowser.png",
+            "avatar": "myAvataranke.svg",
             "vehiculo": {
                     "kart": "Camioneta",
                     "ruedas": "Clasicas",
@@ -95,8 +102,9 @@
             "id_jugador": 557,
             "userName": "Tuki",
             "id_equipo": 4,
-            "personaje": "Zelda",
-            "avatar": "duende.jpg",
+            "personaje": "Waluigi",
+            "fotopersonaje":"waluigi.png",
+            "avatar": "myAvatartuki.svg",
             "vehiculo": {
                     "kart": "Moto",
                     "ruedas": "Legendarias",
@@ -109,7 +117,8 @@
             "userName": "TFany",
             "id_equipo": 5,
             "personaje": "Princesa Rosalina",
-            "avatar": "duende.jpg",
+            "fotopersonaje":"princesa-rosalina.png",
+            "avatar": "myAvatarthefi.svg",
             "vehiculo": {
                     "kart": "Camioneta",
                     "ruedas": "Legendarias doradas",
@@ -122,7 +131,8 @@
             "userName": "KT",
             "id_equipo": 5,
             "personaje": "Princesa Daisy",
-            "avatar": "duende.jpg",
+            "fotopersonaje":"princesa-daisy.png",
+            "avatar": "myAvatarkt.svg",
             "vehiculo": {
                     "kart": "Auto",
                     "ruedas": "Epicas",
@@ -132,10 +142,11 @@
 
         {
             "id_jugador": 560,
-            "userName": "Sinforoso",
+            "userName": "hpocchiola",
             "id_equipo": 6,
             "personaje": "Toad",
-            "avatar": "duende.jpg",
+            "fotopersonaje":"toad.png",
+            "avatar": "myAvatarhernan.svg",
             "vehiculo": {
                     "kart": "Moto",
                     "ruedas": "Peludas",
@@ -148,7 +159,8 @@
             "userName": "izibarreix",
             "id_equipo": 6,
             "personaje": "Wario",
-            "avatar": "duende.jpg",
+            "fotopersonaje":"wario.png",
+            "avatar": "myAvatarizibarreix.svg",
             "vehiculo": {
                     "kart": "Auto",
                     "ruedas": "Vacunas",
