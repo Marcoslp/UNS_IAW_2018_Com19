@@ -401,13 +401,16 @@ tbody:hover tr:hover td {
     font-weight: bold;
     font-size: 25px;
     float: center;
-    background-image: url(../img/back.jpg);
+    padding-left: 50px;
+    padding-right: 50px;
+    background-image: url(../img/back.png);
+  
 }
 
 .jugador-name {
     font-size: 60px;
     font-family: 'Poppins', sans-serif;
-   
+ 
 }
 
 .texto-jugador {
@@ -416,6 +419,7 @@ tbody:hover tr:hover td {
     font-weight: 700;
     text-align: center;
     float:center;
+   
 }
 
 .gridV{

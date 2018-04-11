@@ -116,13 +116,14 @@ function makeFixtureCards(container, data){
         //Armo el cart text
         vueltas = $("<p/>");
         vueltas.addClass("card-text").text("Descripción de la carrera");
+       /*
         link = $("<a/>");
         link.addClass("btn btn-primary").text("Ver resultados");
-        
+        */
        
         bodyCart.append(h5);
         bodyCart.append(vueltas);
-        bodyCart.append(link);
+       // bodyCart.append(link);
         card.append(img);
         card.append(bodyCart);
 
