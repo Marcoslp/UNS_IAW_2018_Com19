@@ -2,103 +2,45 @@
 $(function(){
     $.getJSON('json/fixture.json', function(fixture){
         $.getJSON('json/equipos.json',function(equipos){
-            armarFixture(fixture)
+            armarFixture(fixture);
         });
     });
  
-})
+});
 
-function armarFixture(carreras){
+
+function armarFixture(fixture){
     $("#fixture").click(function(){
         var $this = $(this); //cache the reference
+        var contenedor = $("#contenedorFixture");
+        var grid = $("#gridFixture");
+        var id = "contenedorFixture";
+
         if (!$this.hasClass('disabled')) {
-            $("#fixture").addClass('disabled');
-            $("#equipos").removeClass('disabled'); 
-            $("#posiciones").removeClass('disabled'); 
-         
-            $("#tablaPosicion").remove();
-            $("#contenedorEquipos").remove();
-            $("#descripcionEquipo").remove();
+            cargarVista(grid, id, "fixture");
+            contenedor = $("#contenedorFixture");
 
-
-            $("#gridFixture").append($("<div/>").addClass("row").attr("id","contenedorFixture"));
-        
-            var fechaMapa = new Array(4,3);
-            fechaMapa= [[0,0,0],[0,0,0],[0,0,0],[0,0,0]];
-            var index=0;
-            var cantPosiciones = 12;
-
-
-            $.each(carreras.fixture,function(key,carrera){
-                fechaMapa[index][0] = carrera.fecha;
-                fechaMapa[index][1] = carrera.mapa;
-                fechaMapa[index][2] = carrera.fotoMapa;
-                index++;
-            })
-
-            var contenedor = $("#contenedorFixture");
-            $('html, body').animate({
-                scrollTop: $("#gridFixture").offset().top
-                }, 500);
-            makeFixtureCards(contenedor, fechaMapa);
+            makeFixtureCards(contenedor, fixture);
+            scrollabajo(contenedor);
         }
         else{
-            $("#contenedorFixture").remove();
-            $('html, body').animate({
-                scrollTop: $("#cabeza").offset().top
-                }, 500);
-            $this.removeClass('disabled');
+            scrollarriba(contenedor,$this);
         }
-    })
+    });
 }
 
-function makeFixturePanel(container, data){
+function makeFixtureCards(container, fixture){
 
-    var img,span,li,src,h4;
+    var img, bodyCart, h5, vueltas, src,card;
 
-    container = container.append($("<div></div>").addClass('col-sm-11'));
-
-    for(var i =0; i < data.length; i++){      
-        span = $("<span/>");
-        li = $("<li/>");
-        img = $("<img/>");
-        h4 = $("<h5/>")
-
-        li.addClass("list-group-item-action  list-group-item-danger");
-        src = ("img/mapas/").concat(data[i][2]);  
-
-        fecha = "Fecha "+data[i][0]+":";
-        nombreMapa = data[i][1];  
-       
-        h4.text(fecha+" "+nombreMapa);
-
-
-        img.attr("src",src);
-        img.attr("width","250px");
-        img.css("float","center");
-       
-        span.append(h4);
-        span.append(img);
-        
-        li.append(span);
-        container.append(li);
-    }
-}
-
-function makeFixtureCards(container, data){
-
-    var img, bodyCart, h5, vueltas, link, src,card;
-
-    for(var i =0; i < data.length; i++){  
-
+    $.each(fixture.fixture,function(key,carrera){
         //Armo la imagen del mapa
         card = $("<div></div>").addClass("card bg-light col-sm-3");
         card.css("width","400px");
        
-
         img = $("<img/>").addClass("card-img-top");
         img.attr('alt', 'Card image cap');
-        src = ("img/mapas/").concat(data[i][2]);  
+        src = ("img/mapas/").concat(carrera.fotoMapa);  
         img.attr("src",src);
 
         //Armo el cart body
@@ -106,8 +48,8 @@ function makeFixtureCards(container, data){
         bodyCart = ($("<div></div>"));
         bodyCart.addClass("card-body");
         bodyCart.css("background-image","url:https://www.walldevil.com/wallpapers/a77/background-black-noise-colorful-wallpaper-wallpapers.jpg");
-        fecha = "Fecha "+data[i][0]+": ";
-        nombreMapa = data[i][1]; 
+        fecha = "Fecha "+carrera.fecha+": ";
+        nombreMapa = carrera.mapa; 
         h5 = $("<h5/>").addClass("card-title").text(fecha+nombreMapa);
        
         
@@ -116,29 +58,100 @@ function makeFixtureCards(container, data){
         //Armo el cart text
         vueltas = $("<p/>");
         vueltas.addClass("card-text").text("Descripción de la carrera");
-       /*
-        link = $("<a/>");
-        link.addClass("btn btn-primary").text("Ver resultados");
-        */
+
+      
+        var button = $("<button/>");
+        button.addClass("btn btn-primary").text("Ver resultados");
+        button.attr('id','resultados');
+
+      
        
         bodyCart.append(h5);
         bodyCart.append(vueltas);
-       // bodyCart.append(link);
+        bodyCart.append(button);
         card.append(img);
         card.append(bodyCart);
 
         container = container.append(card);
         
-    }  
+    });
 
 }
-/*
 
-<div class="card col-sm-3" style="width: 400px;">
-        <img class="card-img-top" src="img/mapas/aeropuertosoleado.png" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Fecha 1: Aeropuerto soleado</h5>
-          <p class="card-text">Vueltas: 5.</p>
-          <a href="#" class="btn btn-primary">Ver resultados</a>
-        </div>
-</div>*/
+$("body").on("click","#resultados",function() {
+
+    var container = $("#contenedorTablas").append($("<div></div>").addClass('col-sm-10'));
+
+    makeTablaaPosiciones(fecha,fixture,container);
+   
+    $("#contenedorTablas").show();
+    $('html, body').animate({
+        scrollTop: $("#contenedorTablas").offset().top
+        }, 500);
+});
+
+function makeTablaaPosiciones(fecha, fixture, contenedor){
+    $.getJSON('json/equipos.json',function(equipos){
+        $.getJSON('json/jugadores.json',function(jugadores){
+            console.log(equipos);
+            console.log(jugadores);
+            armarTablaPosicionees(fecha,fixture,equipos,jugadores, contenedor);
+        });
+    });
+}
+
+function armarTablaPosicionees(fecha, dataCarreras, dataEquipos, dataJugadores, contenedor){
+            var puntos = new Array(6,4);
+            dataPosiciones = [[1,0,0,0],[2,0,0,0],[3,0,0,0],[4,0,0,0],[5,0,0,0],[6,0,0,0],[7,0,0,0],[8,0,0,0],[9,0,0,0],[10,0,0,0],[11,0,0,0],[12,0,0,0]];
+            var index=0;
+            var cantPosiciones = 12;
+            var maxFechas = 4;
+            var i;
+
+            $.each(dataCarreras.fixture,function(key,carrera){
+                if(carrera.fecha == maxFechas){
+                    $.each(dataEquipos.equipos,function(key,equipo){   
+                        if(fecha == carrera.fecha){
+                            for(i = 0; i < cantPosiciones;i++){
+                                if(equipo.id_jugadorUno == carrera.posiciones[i][0].jugador || equipo.id_jugadorDos == carrera.posiciones[i][0].jugador){
+                                        dataPosiciones[i][2] = equipo.nombre;
+                                        dataPosiciones[i][3] = "+"+carrera.posiciones[i][0].puntaje;       
+                                        $.each(dataJugadores.jugadores,function(key,player){  
+                                                if(carrera.posiciones[i][0].jugador == player.id_jugador)
+                                                    dataPosiciones[i][1] = player.userName;
+                                        });
+                                }
+                            }
+                        }
+                    });
+                }
+            });
+            var arr = [["Posición", "Jugador", "Equipo", "Puntaje"]];
+            arr = arr.concat(dataPosiciones);
+            console.log(arr);
+            makeRankTablee(contenedor,arr);
+          
+}
+
+
+function makeRankTablee(container, data) {
+
+    container = container.append($("<div></div>").addClass('col-sm-10'));
+    var table = $("<table/>").addClass('table table-dark');
+    table.addClass('table table-dark');
+    table.addClass('table table-bordered');
+    table.addClass('table table-md');
+    table.attr("id","rankTable")
+    var subtitulo = $("<th></th>").attr("colspan", "4").text("TABLA DE POSICIONES ULTIMA CARRERA");
+    subtitulo.attr("id","headerTabla");
+    table.append($("<tr></tr>").append(subtitulo));    
+    $.each(data, function(rowIndex, r) {
+        var row = $("<tr/>");
+        $.each(r, function(colIndex, c) { 
+            row.append($("<t"+(rowIndex == 0 ?  "h" : "d")+"/>").text(c));
+        });
+        table.append(row);
+    });
+    return container.append(table);
+}
+

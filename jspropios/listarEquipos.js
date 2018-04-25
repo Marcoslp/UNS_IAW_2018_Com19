@@ -2,37 +2,28 @@ $(function(){
     $("#descripcionEquipo").hide();
     $('#equipos').click(function(){
         var $this = $(this); //cache the reference
-        if (!$this.hasClass('disabled')) {
-            $("#equipos").addClass('disabled'); 
-            $("#fixture").removeClass('disabled');
-            $("#posiciones").removeClass('disabled'); 
-            
-            $("#contenedorFixture").remove();
-            $("#tablaPosicion").remove();
-            $("#descripcionEquipo").remove();
+        var contenedor = $("#contenedorEquipos");
+        var grid = $("#gridEquipos");
+        var id = "contenedorEquipos";
 
-            $("#gridEquipos").append($("<div/>").addClass("row").attr("id","contenedorEquipos"));
-            
+
+        if (!$this.hasClass('disabled')) {
+            cargarVista(grid, id, "equipos");
+            contenedor=$("#contenedorEquipos");
+            $("#descripcionEquipo").remove();
+           
             $("body").append($("<div/>").addClass("jumbotron jumbotron-fluid container-full").attr("id","descripcionEquipo"));
             $("#descripcionEquipo").hide();
    
-            var contenedor=$("#contenedorEquipos");
-
-
             $.getJSON('json/equipos.json', function(equipos){
                 hacerTabla(contenedor,equipos);
             });
 
-            $('html, body').animate({
-                scrollTop: $("#gridEquipos").offset().top
-                }, 500);
+            scrollabajo(contenedor);
         }
         else{
-            $("#contenedorEquipos").remove();
-            $('html, body').animate({
-                scrollTop: $("#cabeza").offset().top
-                }, 500);
-            $this.removeClass('disabled');
+            scrollarriba(contenedor,$this);
+            $("#descripcionEquipo").remove();
         }
 
     });    
@@ -43,7 +34,6 @@ $(function(){
         selectedLiText=selectedLiText.substring(11);
         $.getJSON('json/jugadores.json', function(jugadores){
             var pantallaJ= getPantallaJugador(selectedLiText,jugadores);
-         //   $("#descripcionEquipo").append(pantallaJ);
             $("#tablaEquipos").remove();
             $("#descripcionEquipo").show();
         }); 
@@ -155,28 +145,6 @@ function getPantallaJugador(nombrejugador,jugadores){
      gridVehiculo.append(vehiculoLista);
 
      gridUser.append(gridVehiculo);
-    
-    // return jumbo.append(grid);
-     /*
-     var devolver=avatar.add(texto);
-     
-    // devolver=devolver.add($("<p/>").add($("<strong/>").text("Personaje Favorito: "+player.personaje)));
-     devolver.append(playerPicture);
 
-
-     var vehiculoLista=$("<dl/>");
-
-     vehiculoLista.addClass("texto-jugador");
-     
-     vehiculoLista=vehiculoLista.add($("<dt/>").text("Vehiculo Favorito:"));
-     vehiculoLista=vehiculoLista.add($("<dd/>").text("- Kart: "+player.vehiculo.kart));
-     vehiculoLista=vehiculoLista.add($("<dd/>").text("- Ruedas: "+player.vehiculo.ruedas));
-     vehiculoLista=vehiculoLista.add($("<dd/>").text("- Glider: "+player.vehiculo.glider));
-     
-     devolver=devolver.add(vehiculoLista);
-    
-     $("#descripcionEquipo").show();
-     return devolver;
-     */
 
  }

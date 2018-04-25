@@ -2,19 +2,20 @@
 A partir de un componente, carga la vista correspondiente
 */
 
-var comp = ["#equipos","#fixture","#posiciones"];
+var comp = ["posiciones","fixture","equipos"];
 
 var contenedores = ["#tablaPosicion","#contenedorFixture","#contenedorEquipos"];
 
-function cargarVista(componente, id){
+function cargarVista(grid, id, component){
     for (var i = 0; i < comp.length; i++){
-        if(id != comp[i]){
-            $(comp[i]).removeClass('disabled'); 
-            $(contenedores[i]).hide();
+        if(component != comp[i]){
+            $("#"+comp[i]).removeClass('disabled'); 
+            $(contenedores[i]).remove();
         }
         else{
-            $(comp[i]).addClass('disabled'); 
+            $("#"+component).addClass('disabled'); 
         }
     }
-   return true;
+    $("#descripcionEquipo").remove();
+    $(grid).append($("<div/>").addClass("row").attr("id",id));
 }
